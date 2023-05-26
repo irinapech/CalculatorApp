@@ -15,17 +15,65 @@ namespace CalculatorApp
         double FirstNumber;
         string Operation;   
         
-        private TextBox txtBox = new TextBox();
-        private Button btnAdd = new Button();
-        private ListBox lstBox = new ListBox();
-        private CheckBox chkBox = new CheckBox();
-        private Label lblCount = new Label();
+        //private TextBox txtBox = new TextBox();
+        //private Button btnAdd = new Button();
+        //private ListBox lstBox = new ListBox();
+        //private CheckBox chkBox = new CheckBox();
+        //private Label lblCount = new Label();
 
         //public object btnAdd { get; private set; }
 
         public Calculator()
         {
             InitializeComponent();
+            this.KeyPress += new KeyPressEventHandler(Calculator_KeyPress);
+        }
+
+        void Calculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= 48 && e.KeyChar <= 57)
+            {
+                MessageBox.Show($"The Key {e.KeyChar} was pressed.");
+
+                switch (e.KeyChar)
+                {
+                    case '0':
+                        number0_Click(sender, e);
+                        break;
+                    case '1':
+                        number1_Click(sender, e);
+                        break;
+                    case '2':
+                        number2_Click(sender, e);
+                        break;
+                    case '3':
+                        number3_Click(sender, e);
+                        break;
+                    case '4':
+                        number4_Click(sender, e);
+                        break;
+                    case '5':
+                        number5_Click(sender, e);
+                        break;
+                    case '6':
+                        number6_Click(sender, e);
+                        break;
+                    case '7':
+                        number7_Click(sender, e);
+                        break;
+                    case '8':
+                        number8_Click(sender, e);
+                        break;
+                    case '9':
+                        number9_Click(sender, e);
+                        break;
+                    default:
+                        MessageBox.Show("Form.KeyPress: '" +
+                                        e.KeyChar.ToString() + "' consumed.");
+                        e.Handled = true;
+                        break;
+                }
+            }
         }
 
         private void Calculator_Load(object sender, EventArgs e)

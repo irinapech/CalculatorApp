@@ -183,7 +183,7 @@
             this.multiply.Name = "button3";
             this.multiply.Size = new System.Drawing.Size(80, 60);
             this.multiply.TabIndex = 17;
-            this.multiply.Text = "*";
+            this.multiply.Text = "X";
             this.multiply.UseVisualStyleBackColor = true;
             this.multiply.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiply_Click);
             // 
