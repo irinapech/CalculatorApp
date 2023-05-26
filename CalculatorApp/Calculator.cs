@@ -35,7 +35,7 @@ namespace CalculatorApp
             MinimizeBox = false;
             BackColor = Color.DarkGreen;
             ForeColor = Color.DarkGreen;
-            Size = new Size(500, 350);
+            Size = new Size(460, 350);
             Text = "Calculator";
             FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
@@ -47,9 +47,22 @@ namespace CalculatorApp
             //this.btnAdd.Size = new System.Drawing.Size(50, 25);
         }
 
-        private void InputBox_TextChanged(object sender, EventArgs e)
+        private void InputBox_TextChanged(object sender, KeyPressEventArgs e)
         {
-
+            if (inputBox.Text.Length > 0)
+            {
+                if (!string.IsNullOrEmpty(inputBox.Text))
+                {
+                    if (e.KeyChar == (char)Keys.Add ||
+                        e.KeyChar == (char)Keys.Subtract ||
+                        e.KeyChar == (char)Keys.Multiply ||
+                        e.KeyChar == (char)Keys.Divide)
+                    {
+                        FirstNumber = Convert.ToDouble(inputBox.Text);
+                        inputBox.Text = "0";
+                    }
+                }
+            }
         }
 
         private void number1_Click(object sender, KeyPressEventArgs e)
@@ -227,35 +240,114 @@ namespace CalculatorApp
 
         private void plus_Click(object sender, KeyPressEventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
-            inputBox.Text = "0";
-            Operation = "+";
+            if (e.KeyChar == (char)Keys.Add)
+            {
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                inputBox.Text = "0";
+                Operation = "+";
+                e.Handled = true;
+            }
         }
 
         private void minus_Click(object sender, KeyPressEventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
-            inputBox.Text = "0";
-            Operation = "-";
+            if (e.KeyChar == (char)Keys.Subtract)
+            {
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                inputBox.Text = "0";
+                Operation = "-";
+                e.Handled = true;
+            }
         }
 
         private void multiply_Click(object sender, KeyPressEventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
-            inputBox.Text = "0";
-            Operation = "*";
+            if (e.KeyChar == (char)Keys.Multiply)
+            {
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                inputBox.Text = "0";
+                Operation = "*";
+                e.Handled = true;
+            }
         }
 
         private void divide_Click(object sender, KeyPressEventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
-            inputBox.Text = "0";
-            Operation = "/";
+            if (e.KeyChar == (char)Keys.Divide)
+            {
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                inputBox.Text = "0";
+                Operation = "/";
+                e.Handled = true;
+            }
+        }
+
+        private void clear_Click(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.C || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
+            {
+                inputBox.Text = "0";
+                e.Handled = true;
+            }
+        }
+
+        private void dot_Click(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.OemPeriod)
+            {
+                inputBox.Text += ".";
+                e.Handled = true;
+            }
         }
 
         private void equal_Click(object sender, KeyPressEventArgs e)
         {
-            
+            if (e.KeyChar == (char)Keys.Oemplus)
+            {
+                inputBox.Text += "=";
+                e.Handled = true;
+
+                double secondNumber;
+                double result;
+
+                secondNumber = Convert.ToDouble(inputBox.Text);
+
+                if (Operation == "+")
+                {
+                    result = FirstNumber + secondNumber;
+                    inputBox.Text = Convert.ToString(result);
+                    FirstNumber = result;
+                }
+
+                if (Operation == "-")
+                {
+                    result = FirstNumber - secondNumber;
+                    inputBox.Text = Convert.ToString(result);
+                    FirstNumber = result;
+                }
+
+                if (Operation == "*")
+                {
+                    result = FirstNumber * secondNumber;
+                    inputBox.Text = Convert.ToString(result);
+                    FirstNumber = result;
+                }
+
+                if (Operation == "/")
+                {
+                    if (secondNumber == 0)
+                    {
+                        inputBox.Text = "Cannot divide by zero";
+                    }
+                    else
+                    {
+                        result = FirstNumber / secondNumber;
+                        inputBox.Text = Convert.ToString(result);
+                        FirstNumber = result;
+                    }
+                }
+
+            }
         }
     }
 }
