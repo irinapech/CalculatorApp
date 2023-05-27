@@ -128,19 +128,10 @@ namespace CalculatorApp
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            if (inputBox.Text.Length > 0)
+            if (System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "[^0-9]"))
             {
-                if (!string.IsNullOrEmpty(inputBox.Text))
-                {
-                    //if (e.KeyChar == (char)Keys.Add ||
-                    //    e.KeyChar == (char)Keys.Subtract ||
-                    //    e.KeyChar == (char)Keys.Multiply ||
-                    //    e.KeyChar == (char)Keys.Divide)
-                    {
-                        FirstNumber = Convert.ToDouble(inputBox.Text);
-                        inputBox.Text = "0";
-                    }
-                }
+                MessageBox.Show("Please enter only numbers.");
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
             }
         }
 
