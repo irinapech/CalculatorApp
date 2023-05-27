@@ -56,16 +56,18 @@
             this.number1.TabIndex = 1;
             this.number1.Text = "1";
             this.number1.UseVisualStyleBackColor = true;
-            this.number1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number1_Click);
+            this.number1.Click += new System.EventHandler(this.number1_Click);
             // 
             // inputBox
             // 
             this.inputBox.Location = new System.Drawing.Point(20, 40);
             this.inputBox.Name = "inputBox";
+            this.inputBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.inputBox.Size = new System.Drawing.Size(620, 26);
             this.inputBox.TabIndex = 0;
+            this.inputBox.Text = "\r\n";
             this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            System.Windows.Forms.KeyPressEventHandler keyPressEventHandler = new System.Windows.Forms.KeyPressEventHandler(this.InputBox_TextChanged);
+            this.inputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
             // 
             // number2
             // 
@@ -75,7 +77,7 @@
             this.number2.TabIndex = 6;
             this.number2.Text = "2";
             this.number2.UseVisualStyleBackColor = true;
-            this.number2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number2_Click);
+            this.number2.Click += new System.EventHandler(this.number2_Click);
             // 
             // number3
             // 
@@ -157,70 +159,70 @@
             this.number0.UseVisualStyleBackColor = true;
             this.number0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number0_Click);
             // 
-            // plusButton
+            // plus
             // 
             this.plus.Location = new System.Drawing.Point(260, 100);
-            this.plus.Name = "button1";
+            this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(80, 60);
             this.plus.TabIndex = 15;
             this.plus.Text = "+";
             this.plus.UseVisualStyleBackColor = true;
-            this.plus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.plus_Click);
+            this.plus.Click += new System.EventHandler(this.plus_Click);
             // 
-            // minusButton
+            // minus
             // 
             this.minus.Location = new System.Drawing.Point(360, 100);
-            this.minus.Name = "button2";
+            this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(80, 60);
             this.minus.TabIndex = 16;
             this.minus.Text = "-";
             this.minus.UseVisualStyleBackColor = true;
             this.minus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minus_Click);
             // 
-            // multiplyButton
+            // multiply
             // 
             this.multiply.Location = new System.Drawing.Point(460, 100);
-            this.multiply.Name = "button3";
+            this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(80, 60);
             this.multiply.TabIndex = 17;
             this.multiply.Text = "X";
             this.multiply.UseVisualStyleBackColor = true;
             this.multiply.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiply_Click);
             // 
-            // divideButton
+            // divide
             // 
             this.divide.Location = new System.Drawing.Point(560, 100);
-            this.divide.Name = "button4";
+            this.divide.Name = "divide";
             this.divide.Size = new System.Drawing.Size(80, 60);
             this.divide.TabIndex = 18;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = true;
             this.divide.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.divide_Click);
             // 
-            // equalButton
+            // equal
             // 
             this.equal.Location = new System.Drawing.Point(460, 200);
-            this.equal.Name = "button5";
+            this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(180, 60);
             this.equal.TabIndex = 19;
             this.equal.Text = "=";
             this.equal.UseVisualStyleBackColor = true;
-            this.equal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.equal_Click);
+            this.equal.Click += new System.EventHandler(this.equal_Click);
             // 
-            // clearButton
+            // clear
             // 
             this.clear.Location = new System.Drawing.Point(260, 200);
-            this.clear.Name = "C";
+            this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(80, 60);
             this.clear.TabIndex = 20;
             this.clear.Text = "C";
             this.clear.UseVisualStyleBackColor = true;
             this.clear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clear_Click);
             // 
-            // dotButton
+            // dot
             // 
             this.dot.Location = new System.Drawing.Point(360, 200);
-            this.dot.Name = ".";
+            this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(80, 60);
             this.dot.TabIndex = 21;
             this.dot.Text = ".";
@@ -264,8 +266,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox inputBox;
         private System.Windows.Forms.Button number1;
         private System.Windows.Forms.Button number2;
         private System.Windows.Forms.Button number3;
@@ -283,6 +283,6 @@
         private System.Windows.Forms.Button equal;
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button dot;
+        private System.Windows.Forms.TextBox inputBox;
     }
 }
-
