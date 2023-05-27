@@ -203,7 +203,6 @@ namespace CalculatorApp
             {
                 inputBox.Text += "4";
             }
-            e.Handled = true;
         }
 
         private void number5_Click(object sender, KeyPressEventArgs e)
