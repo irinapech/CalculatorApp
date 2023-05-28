@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CalculatorApp
 {
@@ -110,8 +111,8 @@ namespace CalculatorApp
             // appearance
             MaximizeBox = false;
             MinimizeBox = false;
-            BackColor = Color.DarkGreen;
-            ForeColor = Color.DarkGreen;
+            BackColor = Color.Black;
+            ForeColor = Color.Black;
             Size = new Size(460, 350);
             Text = "Calculator";
             FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -129,7 +130,7 @@ namespace CalculatorApp
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            if (System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "[^0-9]"))
+            if (System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "/^\\d*\\.?\\d*$/"))
             {
                 //MessageBox.Show("Please enter only numbers.");
                 inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
@@ -291,7 +292,14 @@ namespace CalculatorApp
 
         private void dot_Click(object sender, EventArgs e)
         {
-            inputBox.Text += ".";
+            if (inputBox.Text == "0" && inputBox.Text != null)
+            {
+                inputBox.Text = "";
+            }
+            else
+            {
+                inputBox.Text += "";
+            }
         }
 
         private void power2_Click(object sender, EventArgs e)
@@ -305,11 +313,7 @@ namespace CalculatorApp
         {
             FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = Math.Sqrt(FirstNumber);
-            string specifier = "C";
-            CultureInfo culture;
-            culture = CultureInfo.CreateSpecificCulture("en-US");
-            string resultString = result.ToString(specifier);
-            inputBox.Text = resultString;
+            inputBox.Text = result.ToString();
         }
 
         private void equal_Click(object sender, EventArgs e)
