@@ -46,6 +46,8 @@
             this.equal = new System.Windows.Forms.Button();
             this.clear = new System.Windows.Forms.Button();
             this.dot = new System.Windows.Forms.Button();
+            this.power2 = new System.Windows.Forms.Button();
+            this.sqrt = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // number1
@@ -87,7 +89,7 @@
             this.number3.TabIndex = 7;
             this.number3.Text = "3";
             this.number3.UseVisualStyleBackColor = true;
-            this.number3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number3_Click);
+            this.number3.Click += new System.EventHandler(this.number3_Click);
             // 
             // number4
             // 
@@ -97,7 +99,7 @@
             this.number4.TabIndex = 8;
             this.number4.Text = "4";
             this.number4.UseVisualStyleBackColor = true;
-            this.number4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number4_Click);
+            this.number4.Click += new System.EventHandler(this.number4_Click);
             // 
             // number5
             // 
@@ -107,7 +109,7 @@
             this.number5.TabIndex = 9;
             this.number5.Text = "5";
             this.number5.UseVisualStyleBackColor = true;
-            this.number5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number5_Click);
+            this.number5.Click += new System.EventHandler(this.number5_Click);
             // 
             // number6
             // 
@@ -117,7 +119,7 @@
             this.number6.TabIndex = 10;
             this.number6.Text = "6";
             this.number6.UseVisualStyleBackColor = true;
-            this.number6.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number6_Click);
+            this.number6.Click += new System.EventHandler(this.number6_Click);
             // 
             // number7
             // 
@@ -127,7 +129,7 @@
             this.number7.TabIndex = 11;
             this.number7.Text = "7";
             this.number7.UseVisualStyleBackColor = true;
-            this.number7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number7_Click);
+            this.number7.Click += new System.EventHandler(this.number7_Click);
             // 
             // number8
             // 
@@ -137,7 +139,7 @@
             this.number8.TabIndex = 12;
             this.number8.Text = "8";
             this.number8.UseVisualStyleBackColor = true;
-            this.number8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number8_Click);
+            this.number8.Click += new System.EventHandler(this.number8_Click);
             // 
             // number9
             // 
@@ -147,7 +149,7 @@
             this.number9.TabIndex = 13;
             this.number9.Text = "9";
             this.number9.UseVisualStyleBackColor = true;
-            this.number9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number9_Click);
+            this.number9.Click += new System.EventHandler(this.number9_Click);
             // 
             // number0
             // 
@@ -157,7 +159,7 @@
             this.number0.TabIndex = 14;
             this.number0.Text = "0";
             this.number0.UseVisualStyleBackColor = true;
-            this.number0.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.number0_Click);
+            this.number0.Click += new System.EventHandler(this.number0_Click);
             // 
             // plus
             // 
@@ -175,9 +177,9 @@
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(80, 60);
             this.minus.TabIndex = 16;
-            this.minus.Text = "-";
+            this.minus.Text = "---";
             this.minus.UseVisualStyleBackColor = true;
-            this.minus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.minus_Click);
+            this.minus.Click += new System.EventHandler(this.minus_Click);
             // 
             // multiply
             // 
@@ -187,7 +189,7 @@
             this.multiply.TabIndex = 17;
             this.multiply.Text = "X";
             this.multiply.UseVisualStyleBackColor = true;
-            this.multiply.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.multiply_Click);
+            this.multiply.Click += new System.EventHandler(this.multiply_Click);
             // 
             // divide
             // 
@@ -197,7 +199,7 @@
             this.divide.TabIndex = 18;
             this.divide.Text = "/";
             this.divide.UseVisualStyleBackColor = true;
-            this.divide.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.divide_Click);
+            this.divide.Click += new System.EventHandler(this.divide_Click);
             // 
             // equal
             // 
@@ -217,7 +219,7 @@
             this.clear.TabIndex = 20;
             this.clear.Text = "C";
             this.clear.UseVisualStyleBackColor = true;
-            this.clear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.clear_Click);
+            this.clear.Click += new System.EventHandler(this.clear_Click);
             // 
             // dot
             // 
@@ -227,13 +229,35 @@
             this.dot.TabIndex = 21;
             this.dot.Text = ".";
             this.dot.UseVisualStyleBackColor = true;
-            this.dot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dot_Click);
+            this.dot.Click += new System.EventHandler(this.dot_Click);
+            // 
+            // X^2
+            // 
+            this.power2.Location = new System.Drawing.Point(360, 300);
+            this.power2.Name = "X^2";
+            this.power2.Size = new System.Drawing.Size(80, 60);
+            this.power2.TabIndex = 24;
+            this.power2.Text = "X^2";
+            this.power2.UseVisualStyleBackColor = true;
+            this.power2.Click += new System.EventHandler(this.power2_Click);
+            // 
+            // sqrt
+            // 
+            this.sqrt.Location = new System.Drawing.Point(260, 300);
+            this.sqrt.Name = "sqrt";
+            this.sqrt.Size = new System.Drawing.Size(80, 60);
+            this.sqrt.TabIndex = 23;
+            this.sqrt.Text = "sqrt";
+            this.sqrt.UseVisualStyleBackColor = true;
+            this.sqrt.Click += new System.EventHandler(this.sqrt_Click);
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.sqrt);
+            this.Controls.Add(this.power2);
             this.Controls.Add(this.dot);
             this.Controls.Add(this.clear);
             this.Controls.Add(this.equal);
@@ -284,5 +308,7 @@
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Button dot;
         private System.Windows.Forms.TextBox inputBox;
+        private System.Windows.Forms.Button power2;
+        private System.Windows.Forms.Button sqrt;
     }
 }

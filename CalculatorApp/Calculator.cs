@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -20,7 +21,7 @@ namespace CalculatorApp
         public Calculator()
         {
             InitializeComponent();
-            this.KeyPress += new KeyPressEventHandler(Calculator_KeyPress);
+            //this.KeyPress += new KeyPressEventHandler(Calculator_KeyPress);
         }
 
         void Calculator_KeyPress(object sender, KeyPressEventArgs e)
@@ -130,33 +131,20 @@ namespace CalculatorApp
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                //MessageBox.Show("Please enter only numbers.");
                 inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
             }
         }
 
         private void number1_Click(object sender, EventArgs e)
         {
-            //_ = new TextBox { Location = new Point(50, 50) };
-
-            //if (e.KeyChar == (char)Keys.D1 && inputBox.Text == "0" && inputBox.Text != null)
-            //{
-            //    inputBox.Text = "1";
-
-            //}
-            //else if (e.KeyChar == (char)Keys.D1)
-            //{
-            //    inputBox.Text += "1";
-            //}
-            //e.Handled = true;
-
             if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "1";
             }
             else
             {
-                inputBox.Text = inputBox.Text + "1";
+                inputBox.Text += "1";
             }
         }
 
@@ -168,210 +156,169 @@ namespace CalculatorApp
             }
             else
             {
-                inputBox.Text = inputBox.Text + "2";
+                inputBox.Text += "2";
             }
         }
 
-        private void number3_Click(object sender, KeyPressEventArgs e)
+        private void number3_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D3 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "3";
             }
-            else if (e.KeyChar == (char)Keys.D3)
+            else
             {
                 inputBox.Text += "3";
             }
-            e.Handled = true;
-            //else
-            //{
-            //    inputBox.Text = inputBox.Text + "3";
-            //}
         }
 
-        private void number4_Click(object sender, KeyPressEventArgs e)
+        private void number4_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D4 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "4";
             }
-            else if (e.KeyChar == (char)Keys.D4)
+            else
             {
                 inputBox.Text += "4";
             }
         }
 
-        private void number5_Click(object sender, KeyPressEventArgs e)
+        private void number5_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D5 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "5";
             }
-            else if (e.KeyChar == (char)Keys.D5)
+            else
             {
                 inputBox.Text += "5";
             }
-            e.Handled = true;
         }
 
-        private void number6_Click(object sender, KeyPressEventArgs e)
+        private void number6_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D6 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "6";
             }
-            else if (e.KeyChar == (char)Keys.D6)
+            else
             {
                 inputBox.Text += "6";
             }
-            e.Handled = true;
         }
 
-        private void number7_Click(object sender, KeyPressEventArgs e)
+        private void number7_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D7 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "7";
-                e.Handled = true;
             }
-            else if (e.KeyChar == (char)Keys.D7)
+            else
             {
                 inputBox.Text += "7";
-                e.Handled = true;
             }
         }
 
-        private void number8_Click(object sender, KeyPressEventArgs e)
+        private void number8_Click(object sender,  EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D8 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "8";
-                e.Handled = true;
             }
-            else if (e.KeyChar == (char)Keys.D8)
+            else
             {
                 inputBox.Text += "8";
-                e.Handled = true;
             }
         }
 
-        private void number9_Click(object sender, KeyPressEventArgs e)
+        private void number9_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D9 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "9";
-                e.Handled = true;
             }
-            else if (e.KeyChar == (char)Keys.D9)
+            else
             {
                 inputBox.Text += "9";
-                e.Handled = true;
             }
         }
 
-        private void number0_Click(object sender, KeyPressEventArgs e)
+        private void number0_Click(object sender, EventArgs e)
         {
-            _ = new TextBox { Location = new Point(50, 50) };
-
-            if (e.KeyChar == (char)Keys.D0 && inputBox.Text == "0" && inputBox.Text != null)
+            if (inputBox.Text == "0" && inputBox.Text != null)
             {
                 inputBox.Text = "0";
-                e.Handled = true;
             }
-            else if (e.KeyChar == (char)Keys.D0)
+            else
             {
                 inputBox.Text += "0";
-                e.Handled = true;
             }
         }
 
         private void plus_Click(object sender, EventArgs e)
         {
             FirstNumber = Convert.ToDouble(inputBox.Text);
-            inputBox.Text = "0";
+            inputBox.Text = "";
             Operation = "+";
         }
 
-        private void minus_Click(object sender, KeyPressEventArgs e)
+        private void minus_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Subtract)
-            {
-                FirstNumber = Convert.ToDouble(inputBox.Text);
-                inputBox.Text = "0";
-                Operation = "-";
-                e.Handled = true;
-            }
+            FirstNumber = Convert.ToDouble(inputBox.Text);
+            inputBox.Text = "";
+            Operation = "-";
         }
 
-        private void multiply_Click(object sender, KeyPressEventArgs e)
+        private void multiply_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Multiply)
-            {
-                FirstNumber = Convert.ToDouble(inputBox.Text);
-                inputBox.Text = "0";
-                Operation = "*";
-                e.Handled = true;
-            }
+            FirstNumber = Convert.ToDouble(inputBox.Text);
+            inputBox.Text = "";
+            Operation = "*";
         }
 
-        private void divide_Click(object sender, KeyPressEventArgs e)
+        private void divide_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Divide)
-            {
-                FirstNumber = Convert.ToDouble(inputBox.Text);
-                inputBox.Text = "0";
-                Operation = "/";
-                e.Handled = true;
-            }
+            FirstNumber = Convert.ToDouble(inputBox.Text);
+            inputBox.Text = "";
+            Operation = "/";
         }
 
-        private void clear_Click(object sender, KeyPressEventArgs e)
+        private void clear_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.C || e.KeyChar == (char)Keys.Delete || e.KeyChar == (char)Keys.Back)
-            {
-                inputBox.Text = "0";
-                e.Handled = true;
-            }
+            inputBox.Text = "";
         }
 
-        private void dot_Click(object sender, KeyPressEventArgs e)
+        private void dot_Click(object sender, EventArgs e)
         {
-            if (e.KeyChar == (char)Keys.OemPeriod)
-            {
-                inputBox.Text += ".";
-                e.Handled = true;
-            }
+            inputBox.Text += ".";
+        }
+
+        private void power2_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double result = Math.Pow(FirstNumber, 2);
+            inputBox.Text = result.ToString();
+        }
+
+        private void sqrt_Click(object sender, EventArgs e)
+        {
+            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double result = Math.Sqrt(FirstNumber);
+            string specifier = "C";
+            CultureInfo culture;
+            culture = CultureInfo.CreateSpecificCulture("en-US");
+            string resultString = result.ToString(specifier);
+            inputBox.Text = resultString;
         }
 
         private void equal_Click(object sender, EventArgs e)
-        {
-            //if (e == '=')
-            //{
-            //    inputBox.Text += "=";
-            //    e.Handled = true;
+        { 
 
             double result;
             double SecondNumber;
 
             SecondNumber = Convert.ToDouble(inputBox.Text);
-
-            //var found = inputBox.Text.IndexOf(Operation);
-            //string secondNumberString = inputBox.Text.Substring(found);
-            //double SecondNumber = Convert.ToDouble(secondNumberString);
 
             if (Operation == "+")
                 {
@@ -380,19 +327,19 @@ namespace CalculatorApp
                     FirstNumber = result;
                 }
 
-                if (Operation == "-")
-                {
-                    result = FirstNumber - SecondNumber;
-                    inputBox.Text = Convert.ToString(result);
-                    FirstNumber = result;
-                }
+            if (Operation == "-")
+            {
+                result = FirstNumber - SecondNumber;
+                inputBox.Text = Convert.ToString(result);
+                FirstNumber = result;
+            }
 
-                if (Operation == "*")
-                {
-                    result = FirstNumber * SecondNumber;
-                    inputBox.Text = Convert.ToString(result);
-                    FirstNumber = result;
-                }
+            if (Operation == "*")
+            {
+                result = FirstNumber * SecondNumber;
+                inputBox.Text = Convert.ToString(result);
+                FirstNumber = result;
+            }
 
             if (Operation == "/")
             {
