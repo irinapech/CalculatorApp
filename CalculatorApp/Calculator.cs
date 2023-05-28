@@ -6,8 +6,8 @@ namespace CalculatorApp
 {
     public partial class Calculator : Form
     {
-        double FirstNumber;
         string Operation;
+        double FirstNumber;
 
         public Calculator()
         {
@@ -131,7 +131,7 @@ namespace CalculatorApp
             }
         }
 
-        private void number8_Click(object sender,  EventArgs e)
+        private void number8_Click(object sender, EventArgs e)
         {
             if (inputBox.Text == "0" && inputBox.Text != null)
             {
@@ -169,28 +169,24 @@ namespace CalculatorApp
 
         private void plus_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "+";
             Operation = "+";
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "-";
             Operation = "-";
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "*";
             Operation = "*";
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "/";
             Operation = "/";
         }
@@ -219,14 +215,14 @@ namespace CalculatorApp
 
         private void power2_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = Math.Pow(FirstNumber, 2);
             inputBox.Text = result.ToString();
         }
 
         private void sqrt_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             if (FirstNumber < 0)
             {
                 inputBox.Text = "Invalid Input";
@@ -240,94 +236,98 @@ namespace CalculatorApp
 
         private void powerXtoY_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "^";
             Operation = "^";
         }
 
         private void oneOverX_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = 1 / FirstNumber;
             inputBox.Text = Convert.ToString(result);
         }
 
         private void remainder_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "%";
             Operation = "%";
         }
 
         private void plusMinus_Click(object sender, EventArgs e)
         {
-            FirstNumber = Convert.ToDouble(inputBox.Text);
+            double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = (FirstNumber) * (-1);
             inputBox.Text = Convert.ToString(result);
         }
 
         private void equal_Click(object sender, EventArgs e)
-        { 
+        {
 
             double result;
             double SecondNumber;
 
-            FirstNumber = Convert.ToDouble(inputBox.Text.Remove(inputBox.Text.IndexOf(Operation)));
-            SecondNumber = Convert.ToDouble(inputBox.Text.Substring(inputBox.Text.IndexOf(Operation) + 1));
-            
-            if (Operation == "+")
+            if (inputBox.Text != null)
+            {
+
+                FirstNumber = Convert.ToDouble(inputBox.Text.Remove(inputBox.Text.IndexOf(Operation)));
+                SecondNumber = Convert.ToDouble(inputBox.Text.Substring(inputBox.Text.IndexOf(Operation) + 1));
+
+                if (Operation == "+")
                 {
                     result = FirstNumber + SecondNumber;
                     inputBox.Text = Convert.ToString(result);
                     FirstNumber = result;
                 }
 
-            if (Operation == "-")
-            {
-                result = FirstNumber - SecondNumber;
-                inputBox.Text = Convert.ToString(result);
-                FirstNumber = result;
-            }
-
-            if (Operation == "*")
-            {
-                result = FirstNumber * SecondNumber;
-                inputBox.Text = Convert.ToString(result);
-                FirstNumber = result;
-            }
-
-            if (Operation == "/")
-            {
-                if (SecondNumber == 0)
+                if (Operation == "-")
                 {
-                    inputBox.Text = "Cannot divide by zero";
-                }
-                else
-                {
-                    result = FirstNumber / SecondNumber;
+                    result = FirstNumber - SecondNumber;
                     inputBox.Text = Convert.ToString(result);
                     FirstNumber = result;
                 }
-            }
 
-            if (Operation == "^")
-            {
-                result = Math.Pow(FirstNumber, SecondNumber);
-                inputBox.Text = Convert.ToString(result);
-                FirstNumber = result;
-            }
-
-            if (Operation == "%")
-            {
-                if (SecondNumber == 0)
+                if (Operation == "*")
                 {
-                    inputBox.Text = "Cannot divide by zero";
-                }
-                else
-                {
-                    result = FirstNumber % SecondNumber;
+                    result = FirstNumber * SecondNumber;
                     inputBox.Text = Convert.ToString(result);
                     FirstNumber = result;
+                }
+
+                if (Operation == "/")
+                {
+                    if (SecondNumber == 0)
+                    {
+                        inputBox.Text = "Cannot divide by zero";
+                    }
+                    else
+                    {
+                        result = FirstNumber / SecondNumber;
+                        inputBox.Text = Convert.ToString(result);
+                        FirstNumber = result;
+                    }
+                }
+
+                if (Operation == "^")
+                {
+                    result = Math.Pow(FirstNumber, SecondNumber);
+                    inputBox.Text = Convert.ToString(result);
+                    FirstNumber = result;
+                }
+
+                if (Operation == "%")
+                {
+                    if (SecondNumber == 0)
+                    {
+                        inputBox.Text = "Cannot divide by zero";
+                    }
+                    else
+                    {
+                        result = FirstNumber % SecondNumber;
+                        inputBox.Text = Convert.ToString(result);
+                        FirstNumber = result;
+                    }
                 }
             }
         }

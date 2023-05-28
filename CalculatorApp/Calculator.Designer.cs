@@ -57,6 +57,8 @@
             // 
             // number1
             // 
+            this.number1.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number1.Location = new System.Drawing.Point(20, 450);
             this.number1.Name = "number1";
             this.number1.Size = new System.Drawing.Size(80, 60);
@@ -78,6 +80,8 @@
             // 
             // number2
             // 
+            this.number2.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number2.Location = new System.Drawing.Point(116, 450);
             this.number2.Name = "number2";
             this.number2.Size = new System.Drawing.Size(80, 60);
@@ -88,6 +92,8 @@
             // 
             // number3
             // 
+            this.number3.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number3.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number3.Location = new System.Drawing.Point(218, 450);
             this.number3.Name = "number3";
             this.number3.Size = new System.Drawing.Size(80, 60);
@@ -98,6 +104,8 @@
             // 
             // number4
             // 
+            this.number4.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number4.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number4.Location = new System.Drawing.Point(20, 364);
             this.number4.Name = "number4";
             this.number4.Size = new System.Drawing.Size(80, 60);
@@ -108,6 +116,8 @@
             // 
             // number5
             // 
+            this.number5.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number5.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number5.Location = new System.Drawing.Point(116, 364);
             this.number5.Name = "number5";
             this.number5.Size = new System.Drawing.Size(80, 60);
@@ -118,6 +128,8 @@
             // 
             // number6
             // 
+            this.number6.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number6.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number6.Location = new System.Drawing.Point(218, 364);
             this.number6.Name = "number6";
             this.number6.Size = new System.Drawing.Size(80, 60);
@@ -128,6 +140,8 @@
             // 
             // number7
             // 
+            this.number7.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number7.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number7.Location = new System.Drawing.Point(20, 279);
             this.number7.Name = "number7";
             this.number7.Size = new System.Drawing.Size(80, 60);
@@ -138,6 +152,8 @@
             // 
             // number8
             // 
+            this.number8.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number8.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number8.Location = new System.Drawing.Point(116, 279);
             this.number8.Name = "number8";
             this.number8.Size = new System.Drawing.Size(80, 60);
@@ -148,6 +164,8 @@
             // 
             // number9
             // 
+            this.number9.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number9.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number9.Location = new System.Drawing.Point(218, 279);
             this.number9.Name = "number9";
             this.number9.Size = new System.Drawing.Size(80, 60);
@@ -158,6 +176,8 @@
             // 
             // number0
             // 
+            this.number0.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number0.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.number0.Location = new System.Drawing.Point(116, 535);
             this.number0.Name = "number0";
             this.number0.Size = new System.Drawing.Size(80, 60);
@@ -168,6 +188,8 @@
             // 
             // plus
             // 
+            this.plus.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.plus.Location = new System.Drawing.Point(323, 450);
             this.plus.Name = "plus";
             this.plus.Size = new System.Drawing.Size(80, 60);
@@ -178,6 +200,8 @@
             // 
             // minus
             // 
+            this.minus.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.minus.Location = new System.Drawing.Point(323, 364);
             this.minus.Name = "minus";
             this.minus.Size = new System.Drawing.Size(80, 60);
@@ -188,6 +212,8 @@
             // 
             // multiply
             // 
+            this.multiply.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.multiply.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.multiply.Location = new System.Drawing.Point(323, 279);
             this.multiply.Name = "multiply";
             this.multiply.Size = new System.Drawing.Size(80, 60);
@@ -198,6 +224,8 @@
             // 
             // divide
             // 
+            this.divide.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.divide.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.divide.Location = new System.Drawing.Point(323, 190);
             this.divide.Name = "divide";
             this.divide.Size = new System.Drawing.Size(80, 60);
@@ -208,6 +236,8 @@
             // 
             // equal
             // 
+            this.equal.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.equal.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.equal.Location = new System.Drawing.Point(323, 535);
             this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(80, 60);
@@ -218,6 +248,8 @@
             // 
             // clear
             // 
+            this.clear.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.clear.Location = new System.Drawing.Point(218, 100);
             this.clear.Name = "clear";
             this.clear.Size = new System.Drawing.Size(80, 60);
@@ -228,6 +260,8 @@
             // 
             // dot
             // 
+            this.dot.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dot.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.dot.Location = new System.Drawing.Point(218, 535);
             this.dot.Name = "dot";
             this.dot.Size = new System.Drawing.Size(80, 60);
@@ -238,6 +272,8 @@
             // 
             // power2
             // 
+            this.power2.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.power2.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.power2.Location = new System.Drawing.Point(116, 190);
             this.power2.Name = "power2";
             this.power2.Size = new System.Drawing.Size(80, 60);
@@ -248,6 +284,8 @@
             // 
             // sqrt
             // 
+            this.sqrt.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sqrt.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.sqrt.Location = new System.Drawing.Point(218, 190);
             this.sqrt.Name = "sqrt";
             this.sqrt.Size = new System.Drawing.Size(80, 60);
@@ -258,6 +296,8 @@
             // 
             // powerXtoY
             // 
+            this.powerXtoY.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.powerXtoY.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.powerXtoY.Location = new System.Drawing.Point(323, 100);
             this.powerXtoY.Name = "powerXtoY";
             this.powerXtoY.Size = new System.Drawing.Size(80, 60);
@@ -268,6 +308,8 @@
             // 
             // oneOverX
             // 
+            this.oneOverX.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.oneOverX.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.oneOverX.Location = new System.Drawing.Point(20, 190);
             this.oneOverX.Name = "oneOverX";
             this.oneOverX.Size = new System.Drawing.Size(80, 60);
@@ -278,6 +320,8 @@
             // 
             // modulo
             // 
+            this.modulo.Font = new System.Drawing.Font("Segoe UI Light", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modulo.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.modulo.Location = new System.Drawing.Point(20, 100);
             this.modulo.Name = "modulo";
             this.modulo.Size = new System.Drawing.Size(80, 60);
@@ -288,6 +332,8 @@
             // 
             // CE
             // 
+            this.CE.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CE.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.CE.Location = new System.Drawing.Point(116, 100);
             this.CE.Name = "CE";
             this.CE.Size = new System.Drawing.Size(80, 60);
@@ -298,6 +344,8 @@
             // 
             // plusMinus
             // 
+            this.plusMinus.Font = new System.Drawing.Font("Segoe UI Light", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plusMinus.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.plusMinus.Location = new System.Drawing.Point(20, 535);
             this.plusMinus.Name = "plusMinus";
             this.plusMinus.Size = new System.Drawing.Size(80, 60);
