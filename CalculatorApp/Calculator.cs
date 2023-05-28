@@ -217,7 +217,7 @@ namespace CalculatorApp
         {
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = Math.Pow(FirstNumber, 2);
-            inputBox.Text = result.ToString();
+            inputBox.Text = result.ToString("0.00");
         }
 
         private void sqrt_Click(object sender, EventArgs e)
@@ -230,7 +230,7 @@ namespace CalculatorApp
             else
             {
                 double result = Math.Sqrt(FirstNumber);
-                inputBox.Text = result.ToString();
+                inputBox.Text = result.ToString("0.00");
             }
         }
 
@@ -245,7 +245,7 @@ namespace CalculatorApp
         {
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = 1 / FirstNumber;
-            inputBox.Text = Convert.ToString(result);
+            inputBox.Text = result.ToString("0.00");
         }
 
         private void remainder_Click(object sender, EventArgs e)
@@ -259,7 +259,7 @@ namespace CalculatorApp
         {
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = (FirstNumber) * (-1);
-            inputBox.Text = Convert.ToString(result);
+            inputBox.Text = result.ToString("0.00");
         }
 
         private void equal_Click(object sender, EventArgs e)
@@ -277,21 +277,21 @@ namespace CalculatorApp
                 if (Operation == "+")
                 {
                     result = FirstNumber + SecondNumber;
-                    inputBox.Text = Convert.ToString(result);
+                    inputBox.Text = result.ToString("0.00");
                     FirstNumber = result;
                 }
 
                 if (Operation == "-")
                 {
                     result = FirstNumber - SecondNumber;
-                    inputBox.Text = Convert.ToString(result);
+                    inputBox.Text = result.ToString("0.00");
                     FirstNumber = result;
                 }
 
                 if (Operation == "*")
                 {
                     result = FirstNumber * SecondNumber;
-                    inputBox.Text = Convert.ToString(result);
+                    inputBox.Text = result.ToString("0.00");
                     FirstNumber = result;
                 }
 
@@ -304,7 +304,7 @@ namespace CalculatorApp
                     else
                     {
                         result = FirstNumber / SecondNumber;
-                        inputBox.Text = Convert.ToString(result);
+                        inputBox.Text = result.ToString("0.00");
                         FirstNumber = result;
                     }
                 }
@@ -312,7 +312,7 @@ namespace CalculatorApp
                 if (Operation == "^")
                 {
                     result = Math.Pow(FirstNumber, SecondNumber);
-                    inputBox.Text = Convert.ToString(result);
+                    inputBox.Text = result.ToString("0.00");
                     FirstNumber = result;
                 }
 
@@ -325,7 +325,7 @@ namespace CalculatorApp
                     else
                     {
                         result = FirstNumber % SecondNumber;
-                        inputBox.Text = Convert.ToString(result);
+                        inputBox.Text = result.ToString("0.00");
                         FirstNumber = result;
                     }
                 }
