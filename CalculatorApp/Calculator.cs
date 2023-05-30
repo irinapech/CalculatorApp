@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -169,24 +170,40 @@ namespace CalculatorApp
 
         private void plus_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
             inputBox.Text += "+";
             Operation = "+";
         }
 
         private void minus_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
             inputBox.Text += "-";
             Operation = "-";
         }
 
         private void multiply_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
             inputBox.Text += "*";
             Operation = "*";
         }
 
         private void divide_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
             inputBox.Text += "/";
             Operation = "/";
         }
@@ -215,6 +232,11 @@ namespace CalculatorApp
 
         private void power2_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
+
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = Math.Pow(FirstNumber, 2);
             if (Math.Abs(result - (int)result) > 0)
@@ -229,6 +251,11 @@ namespace CalculatorApp
 
         private void sqrt_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
+
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             if (FirstNumber < 0)
             {
@@ -250,13 +277,21 @@ namespace CalculatorApp
 
         private void powerXtoY_Click(object sender, EventArgs e)
         {
-            double FirstNumber = Convert.ToDouble(inputBox.Text);
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
             inputBox.Text += "^";
             Operation = "^";
         }
 
         private void oneOverX_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
+
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             double result = 1 / FirstNumber;
             if (Math.Abs(result - (int)result) > 0)
@@ -271,6 +306,11 @@ namespace CalculatorApp
 
         private void remainder_Click(object sender, EventArgs e)
         {
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            }
+
             double FirstNumber = Convert.ToDouble(inputBox.Text);
             inputBox.Text += "%";
             Operation = "%";
@@ -278,15 +318,35 @@ namespace CalculatorApp
 
         private void plusMinus_Click(object sender, EventArgs e)
         {
-            double FirstNumber = Convert.ToDouble(inputBox.Text);
-            double result = (FirstNumber) * (-1);
-            if (Math.Abs(result - (int)result) > 0)
+            char tempOperation;
+            double FirstNumber, result;
+            if (!Char.IsDigit(inputBox.Text.Last()) && inputBox.Text.Last() != '.')
             {
-                inputBox.Text = result.ToString("0.00");
+                tempOperation = inputBox.Text.Last();
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                result = (FirstNumber) * (-1);
+                if (Math.Abs(result - (int)result) > 0)
+                {
+                    inputBox.Text = result.ToString("0.00") + tempOperation;
+                }
+                else
+                {
+                    inputBox.Text = result.ToString() + tempOperation;
+                }
             }
             else
             {
-                inputBox.Text = result.ToString();
+                FirstNumber = Convert.ToDouble(inputBox.Text);
+                result = FirstNumber * (-1);
+                if (Math.Abs(result - (int)result) > 0)
+                {
+                    inputBox.Text = result.ToString("0.00");
+                }
+                else
+                {
+                    inputBox.Text = result.ToString();
+                }
             }
         }
 
