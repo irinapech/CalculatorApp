@@ -157,7 +157,18 @@ namespace CalculatorApp
 
         private void CE_Click(object sender, EventArgs e)
         {
-            inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            if (!string.IsNullOrEmpty(inputBox.Text) && !string.IsNullOrWhiteSpace(inputBox.Text))
+            {
+                inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+                if (string.IsNullOrWhiteSpace(inputBox.Text))
+                {
+                    inputBox.Text = "0";
+                }
+            }
+            else
+            {
+                inputBox.Text = "0";
+            }
         }
 
         private void dot_Click(object sender, EventArgs e)
