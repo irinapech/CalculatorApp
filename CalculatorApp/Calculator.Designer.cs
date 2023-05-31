@@ -55,18 +55,6 @@
             this.plusMinus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // number1
-            // 
-            this.number1.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.number1.Location = new System.Drawing.Point(20, 450);
-            this.number1.Name = "number1";
-            this.number1.Size = new System.Drawing.Size(80, 60);
-            this.number1.TabIndex = 1;
-            this.number1.Text = "1";
-            this.number1.UseVisualStyleBackColor = true;
-            this.number1.Click += new System.EventHandler(this.number1_Click);
-            // 
             // inputBox
             // 
             this.inputBox.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -78,6 +66,18 @@
             this.inputBox.Text = "\r\n";
             this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.inputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
+            // 
+            // number1
+            // 
+            this.number1.Font = new System.Drawing.Font("Segoe UI Light", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.number1.Location = new System.Drawing.Point(20, 450);
+            this.number1.Name = "number1";
+            this.number1.Size = new System.Drawing.Size(80, 60);
+            this.number1.TabIndex = 1;
+            this.number1.Text = "1";
+            this.number1.UseVisualStyleBackColor = true;
+            this.number1.Click += new System.EventHandler(this.number1_Click);
             // 
             // number2
             // 

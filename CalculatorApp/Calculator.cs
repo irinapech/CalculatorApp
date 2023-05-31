@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 
 namespace CalculatorApp
@@ -41,131 +42,72 @@ namespace CalculatorApp
 
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            if (!System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "/^\\d*\\.?\\d*$/"))
-            {
-                //MessageBox.Show("Please enter only numbers.");
-                //inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
-            }
+            //if (!System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "/^\\d*\\.?\\d*$/"))
+            //{
+            //    MessageBox.Show("Please enter only numbers.");
+            //    inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+            //}
         }
 
-        private void number1_Click(object sender, EventArgs e)
+        private void Number_Click(string digit)
         {
             if (inputBox.Text == "0" && inputBox.Text != null)
             {
-                inputBox.Text = "1";
+                inputBox.Text = digit;
             }
             else
             {
-                inputBox.Text += "1";
+                inputBox.Text += digit;
             }
+        }
+        private void number1_Click(object sender, EventArgs e)
+        {
+            Number_Click("1");
         }
 
         private void number2_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "2";
-            }
-            else
-            {
-                inputBox.Text += "2";
-            }
+            Number_Click("2");
         }
 
         private void number3_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "3";
-            }
-            else
-            {
-                inputBox.Text += "3";
-            }
+            Number_Click("3");
         }
 
         private void number4_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "4";
-            }
-            else
-            {
-                inputBox.Text += "4";
-            }
+            Number_Click("4");
         }
 
         private void number5_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "5";
-            }
-            else
-            {
-                inputBox.Text += "5";
-            }
+            Number_Click("5");
         }
 
         private void number6_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "6";
-            }
-            else
-            {
-                inputBox.Text += "6";
-            }
+            Number_Click("6");
         }
 
         private void number7_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "7";
-            }
-            else
-            {
-                inputBox.Text += "7";
-            }
+            Number_Click("7");
         }
 
         private void number8_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "8";
-            }
-            else
-            {
-                inputBox.Text += "8";
-            }
+            Number_Click("8");
         }
 
         private void number9_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "9";
-            }
-            else
-            {
-                inputBox.Text += "9";
-            }
+            Number_Click("9");
         }
 
         private void number0_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == "0" && inputBox.Text != null)
-            {
-                inputBox.Text = "0";
-            }
-            else
-            {
-                inputBox.Text += "0";
-            }
+            Number_Click("0");
         }
 
         private void plus_Click(object sender, EventArgs e)
@@ -220,13 +162,16 @@ namespace CalculatorApp
 
         private void dot_Click(object sender, EventArgs e)
         {
-            if (inputBox.Text == null)
+            if (!inputBox.Text.Contains("."))
             {
-                inputBox.Text = "0.";
-            }
-            else
-            {
-                inputBox.Text += ".";
+                if (inputBox.Text == null)
+                {
+                    inputBox.Text = "0.";
+                }
+                else
+                {
+                    inputBox.Text += ".";
+                }
             }
         }
 
@@ -367,7 +312,7 @@ namespace CalculatorApp
                 {
                     FirstNumber = 0;
                 }
-                
+
                 try
                 {
                     SecondNumber = Convert.ToDouble(inputBox.Text.Substring(inputBox.Text.IndexOf(Operation) + 1));
@@ -388,7 +333,7 @@ namespace CalculatorApp
                     {
                         inputBox.Text = result.ToString();
                     }
-                    
+
                     FirstNumber = result;
                 }
 
