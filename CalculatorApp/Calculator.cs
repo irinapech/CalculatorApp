@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 
@@ -40,13 +41,20 @@ namespace CalculatorApp
             KeyPress += Calculator_KeyPress;
         }
 
+        [DllImport("user32.dll")]
+        static extern bool HideCaret(IntPtr hWnd);
+
         private void InputBox_TextChanged(object sender, EventArgs e)
         {
-            //if (!System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "/^\\d*\\.?\\d*$/"))
-            //{
-            //    MessageBox.Show("Please enter only numbers.");
-            //    inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
-            //}
+            HideCaret(inputBox.Handle);
+            if (System.Text.RegularExpressions.Regex.IsMatch(inputBox.Text, "/^\\d*\\.?\\d*$/"))
+            {
+                MessageBox.Show("Please enter only numbers.");
+                if (!string.IsNullOrWhiteSpace(inputBox.Text))
+                {
+                    inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
+                }
+            }
         }
 
         private void Number_Click(string digit)
@@ -157,7 +165,7 @@ namespace CalculatorApp
 
         private void CE_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(inputBox.Text) && !string.IsNullOrWhiteSpace(inputBox.Text))
+            if (!string.IsNullOrWhiteSpace(inputBox.Text))
             {
                 inputBox.Text = inputBox.Text.Remove(inputBox.Text.Length - 1);
                 if (string.IsNullOrWhiteSpace(inputBox.Text))

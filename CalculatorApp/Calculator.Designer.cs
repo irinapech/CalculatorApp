@@ -1,4 +1,6 @@
-﻿namespace CalculatorApp
+﻿using System.Windows.Forms;
+
+namespace CalculatorApp
 {
     partial class Calculator
     {
@@ -59,6 +61,7 @@
             // 
             this.inputBox.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputBox.Location = new System.Drawing.Point(20, 20);
+            //this.inputBox.BackColor = System.Drawing.Color.Gray;
             this.inputBox.Name = "inputBox";
             this.inputBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.inputBox.Size = new System.Drawing.Size(383, 45);
