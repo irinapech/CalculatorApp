@@ -32,10 +32,11 @@ namespace CalculatorApp
             MinimizeBox = false;
             BackColor = Color.Black;
             ForeColor = Color.Black;
-            Size = new Size(300, 450);
+            Size = new Size(300, 430);
             Text = "Calculator";
             FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
+            
 
             KeyPreview = true;
             KeyPress += Calculator_KeyPress;
