@@ -25,7 +25,7 @@ namespace CalculatorApp
 
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            if (!RegexPattern.IsMatch(this.Text + e.KeyChar, RegexPattern) && !DelOrBack)
+            if (!Regex.IsMatch(this.Text + e.KeyChar, RegexPattern) && !DelOrBack)
             {
                 e.Handled = true;
             }
