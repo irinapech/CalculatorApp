@@ -56,6 +56,7 @@ namespace CalculatorApp
             this.modulo = new System.Windows.Forms.Button();
             this.CE = new System.Windows.Forms.Button();
             this.plusMinus = new System.Windows.Forms.Button();
+            this.maskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // number1
@@ -67,9 +68,9 @@ namespace CalculatorApp
             this.number1.Size = new System.Drawing.Size(80, 60);
             this.number1.TabIndex = 1;
             this.number1.Text = "1";
+            this.number1.UseCompatibleTextRendering = true;
             this.number1.UseVisualStyleBackColor = true;
             this.number1.Click += new System.EventHandler(this.number1_Click);
-            this.number1.UseCompatibleTextRendering = true;
             // 
             // inputBox
             // 
@@ -77,11 +78,22 @@ namespace CalculatorApp
             this.inputBox.Location = new System.Drawing.Point(20, 20);
             this.inputBox.Name = "inputBox";
             this.inputBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.inputBox.Size = new System.Drawing.Size(383, 45);
+            this.inputBox.Size = new System.Drawing.Size(380, 45);
             this.inputBox.TabIndex = 0;
             this.inputBox.Text = "\r\n";
             this.inputBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.inputBox.TextChanged += new System.EventHandler(this.InputBox_TextChanged);
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox.Font = new System.Drawing.Font("Segoe UI Light", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox.Location = new System.Drawing.Point(20, 600);
+            this.maskedTextBox.Name = "maskedTextBox";
+            this.maskedTextBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.maskedTextBox.Size = new System.Drawing.Size(380, 45);
+            this.maskedTextBox.TabIndex = 31;
+            this.maskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.maskedTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox_MaskInputRejected);
             // 
             // number2
             // 
@@ -92,9 +104,9 @@ namespace CalculatorApp
             this.number2.Size = new System.Drawing.Size(80, 60);
             this.number2.TabIndex = 6;
             this.number2.Text = "2";
+            this.number2.UseCompatibleTextRendering = true;
             this.number2.UseVisualStyleBackColor = true;
             this.number2.Click += new System.EventHandler(this.number2_Click);
-            this.number2.UseCompatibleTextRendering = true;
             // 
             // number3
             // 
@@ -105,9 +117,9 @@ namespace CalculatorApp
             this.number3.Size = new System.Drawing.Size(80, 60);
             this.number3.TabIndex = 7;
             this.number3.Text = "3";
+            this.number3.UseCompatibleTextRendering = true;
             this.number3.UseVisualStyleBackColor = true;
             this.number3.Click += new System.EventHandler(this.number3_Click);
-            this.number3.UseCompatibleTextRendering = true;
             // 
             // number4
             // 
@@ -118,9 +130,9 @@ namespace CalculatorApp
             this.number4.Size = new System.Drawing.Size(80, 60);
             this.number4.TabIndex = 8;
             this.number4.Text = "4";
+            this.number4.UseCompatibleTextRendering = true;
             this.number4.UseVisualStyleBackColor = true;
             this.number4.Click += new System.EventHandler(this.number4_Click);
-            this.number4.UseCompatibleTextRendering = true;
             // 
             // number5
             // 
@@ -131,9 +143,9 @@ namespace CalculatorApp
             this.number5.Size = new System.Drawing.Size(80, 60);
             this.number5.TabIndex = 9;
             this.number5.Text = "5";
+            this.number5.UseCompatibleTextRendering = true;
             this.number5.UseVisualStyleBackColor = true;
             this.number5.Click += new System.EventHandler(this.number5_Click);
-            this.number5.UseCompatibleTextRendering = true;
             // 
             // number6
             // 
@@ -144,9 +156,9 @@ namespace CalculatorApp
             this.number6.Size = new System.Drawing.Size(80, 60);
             this.number6.TabIndex = 10;
             this.number6.Text = "6";
+            this.number6.UseCompatibleTextRendering = true;
             this.number6.UseVisualStyleBackColor = true;
             this.number6.Click += new System.EventHandler(this.number6_Click);
-            this.number6.UseCompatibleTextRendering = true;
             // 
             // number7
             // 
@@ -157,9 +169,9 @@ namespace CalculatorApp
             this.number7.Size = new System.Drawing.Size(80, 60);
             this.number7.TabIndex = 11;
             this.number7.Text = "7";
+            this.number7.UseCompatibleTextRendering = true;
             this.number7.UseVisualStyleBackColor = true;
             this.number7.Click += new System.EventHandler(this.number7_Click);
-            this.number7.UseCompatibleTextRendering = true;
             // 
             // number8
             // 
@@ -170,9 +182,9 @@ namespace CalculatorApp
             this.number8.Size = new System.Drawing.Size(80, 60);
             this.number8.TabIndex = 12;
             this.number8.Text = "8";
+            this.number8.UseCompatibleTextRendering = true;
             this.number8.UseVisualStyleBackColor = true;
             this.number8.Click += new System.EventHandler(this.number8_Click);
-            this.number8.UseCompatibleTextRendering = true;
             // 
             // number9
             // 
@@ -183,9 +195,9 @@ namespace CalculatorApp
             this.number9.Size = new System.Drawing.Size(80, 60);
             this.number9.TabIndex = 13;
             this.number9.Text = "9";
+            this.number9.UseCompatibleTextRendering = true;
             this.number9.UseVisualStyleBackColor = true;
             this.number9.Click += new System.EventHandler(this.number9_Click);
-            this.number9.UseCompatibleTextRendering = true;
             // 
             // number0
             // 
@@ -196,9 +208,9 @@ namespace CalculatorApp
             this.number0.Size = new System.Drawing.Size(80, 60);
             this.number0.TabIndex = 14;
             this.number0.Text = "0";
+            this.number0.UseCompatibleTextRendering = true;
             this.number0.UseVisualStyleBackColor = true;
             this.number0.Click += new System.EventHandler(this.number0_Click);
-            this.number0.UseCompatibleTextRendering = true;
             // 
             // plus
             // 
@@ -209,9 +221,9 @@ namespace CalculatorApp
             this.plus.Size = new System.Drawing.Size(80, 60);
             this.plus.TabIndex = 15;
             this.plus.Text = "+";
+            this.plus.UseCompatibleTextRendering = true;
             this.plus.UseVisualStyleBackColor = true;
             this.plus.Click += new System.EventHandler(this.plus_Click);
-            this.plus.UseCompatibleTextRendering = true;
             // 
             // minus
             // 
@@ -222,9 +234,9 @@ namespace CalculatorApp
             this.minus.Size = new System.Drawing.Size(80, 60);
             this.minus.TabIndex = 16;
             this.minus.Text = "-";
+            this.minus.UseCompatibleTextRendering = true;
             this.minus.UseVisualStyleBackColor = true;
             this.minus.Click += new System.EventHandler(this.minus_Click);
-            this.minus.UseCompatibleTextRendering = true;
             // 
             // multiply
             // 
@@ -235,9 +247,9 @@ namespace CalculatorApp
             this.multiply.Size = new System.Drawing.Size(80, 60);
             this.multiply.TabIndex = 17;
             this.multiply.Text = "X";
+            this.multiply.UseCompatibleTextRendering = true;
             this.multiply.UseVisualStyleBackColor = true;
             this.multiply.Click += new System.EventHandler(this.multiply_Click);
-            this.multiply.UseCompatibleTextRendering = true;
             // 
             // divide
             // 
@@ -248,9 +260,9 @@ namespace CalculatorApp
             this.divide.Size = new System.Drawing.Size(80, 60);
             this.divide.TabIndex = 18;
             this.divide.Text = "/";
+            this.divide.UseCompatibleTextRendering = true;
             this.divide.UseVisualStyleBackColor = true;
             this.divide.Click += new System.EventHandler(this.divide_Click);
-            this.divide.UseCompatibleTextRendering = true;
             // 
             // equal
             // 
@@ -261,9 +273,9 @@ namespace CalculatorApp
             this.equal.Size = new System.Drawing.Size(80, 60);
             this.equal.TabIndex = 19;
             this.equal.Text = "=";
+            this.equal.UseCompatibleTextRendering = true;
             this.equal.UseVisualStyleBackColor = true;
             this.equal.Click += new System.EventHandler(this.equal_Click);
-            this.equal.UseCompatibleTextRendering = true;
             // 
             // clear
             // 
@@ -274,9 +286,9 @@ namespace CalculatorApp
             this.clear.Size = new System.Drawing.Size(80, 60);
             this.clear.TabIndex = 20;
             this.clear.Text = "C";
+            this.clear.UseCompatibleTextRendering = true;
             this.clear.UseVisualStyleBackColor = true;
             this.clear.Click += new System.EventHandler(this.clear_Click);
-            this.clear.UseCompatibleTextRendering = true;
             // 
             // dot
             // 
@@ -287,9 +299,9 @@ namespace CalculatorApp
             this.dot.Size = new System.Drawing.Size(80, 60);
             this.dot.TabIndex = 21;
             this.dot.Text = ".";
+            this.dot.UseCompatibleTextRendering = true;
             this.dot.UseVisualStyleBackColor = true;
             this.dot.Click += new System.EventHandler(this.dot_Click);
-            this.dot.UseCompatibleTextRendering = true;
             // 
             // power2
             // 
@@ -300,9 +312,9 @@ namespace CalculatorApp
             this.power2.Size = new System.Drawing.Size(80, 60);
             this.power2.TabIndex = 24;
             this.power2.Text = "X^2";
+            this.power2.UseCompatibleTextRendering = true;
             this.power2.UseVisualStyleBackColor = true;
             this.power2.Click += new System.EventHandler(this.power2_Click);
-            this.power2.UseCompatibleTextRendering = true;
             // 
             // sqrt
             // 
@@ -313,9 +325,9 @@ namespace CalculatorApp
             this.sqrt.Size = new System.Drawing.Size(80, 60);
             this.sqrt.TabIndex = 23;
             this.sqrt.Text = "sqrt";
+            this.sqrt.UseCompatibleTextRendering = true;
             this.sqrt.UseVisualStyleBackColor = true;
             this.sqrt.Click += new System.EventHandler(this.sqrt_Click);
-            this.sqrt.UseCompatibleTextRendering = true;
             // 
             // powerXtoY
             // 
@@ -326,9 +338,9 @@ namespace CalculatorApp
             this.powerXtoY.Size = new System.Drawing.Size(80, 60);
             this.powerXtoY.TabIndex = 25;
             this.powerXtoY.Text = "X^Y";
+            this.powerXtoY.UseCompatibleTextRendering = true;
             this.powerXtoY.UseVisualStyleBackColor = true;
             this.powerXtoY.Click += new System.EventHandler(this.powerXtoY_Click);
-            this.powerXtoY.UseCompatibleTextRendering = true;
             // 
             // oneOverX
             // 
@@ -339,9 +351,9 @@ namespace CalculatorApp
             this.oneOverX.Size = new System.Drawing.Size(80, 60);
             this.oneOverX.TabIndex = 26;
             this.oneOverX.Text = "1 / X";
+            this.oneOverX.UseCompatibleTextRendering = true;
             this.oneOverX.UseVisualStyleBackColor = true;
             this.oneOverX.Click += new System.EventHandler(this.oneOverX_Click);
-            this.oneOverX.UseCompatibleTextRendering = true;
             // 
             // modulo
             // 
@@ -352,9 +364,9 @@ namespace CalculatorApp
             this.modulo.Size = new System.Drawing.Size(80, 60);
             this.modulo.TabIndex = 27;
             this.modulo.Text = "mod";
+            this.modulo.UseCompatibleTextRendering = true;
             this.modulo.UseVisualStyleBackColor = true;
             this.modulo.Click += new System.EventHandler(this.remainder_Click);
-            this.modulo.UseCompatibleTextRendering = true;
             // 
             // CE
             // 
@@ -365,9 +377,9 @@ namespace CalculatorApp
             this.CE.Size = new System.Drawing.Size(80, 60);
             this.CE.TabIndex = 28;
             this.CE.Text = "CE";
+            this.CE.UseCompatibleTextRendering = true;
             this.CE.UseVisualStyleBackColor = true;
             this.CE.Click += new System.EventHandler(this.CE_Click);
-            this.CE.UseCompatibleTextRendering = true;
             // 
             // plusMinus
             // 
@@ -378,15 +390,16 @@ namespace CalculatorApp
             this.plusMinus.Size = new System.Drawing.Size(80, 60);
             this.plusMinus.TabIndex = 29;
             this.plusMinus.Text = "+/-";
+            this.plusMinus.UseCompatibleTextRendering = true;
             this.plusMinus.UseVisualStyleBackColor = true;
             this.plusMinus.Click += new System.EventHandler(this.plusMinus_Click);
-            this.plusMinus.UseCompatibleTextRendering = true;
             // 
             // Calculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(287, 412);
+            this.ClientSize = new System.Drawing.Size(426, 678);
+            this.Controls.Add(this.maskedTextBox);
             this.Controls.Add(this.plusMinus);
             this.Controls.Add(this.CE);
             this.Controls.Add(this.modulo);
@@ -446,5 +459,6 @@ namespace CalculatorApp
         private System.Windows.Forms.Button modulo;
         private System.Windows.Forms.Button CE;
         private System.Windows.Forms.Button plusMinus;
+        private MaskedTextBox maskedTextBox;
     }
 }

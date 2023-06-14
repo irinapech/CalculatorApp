@@ -1,28 +1,47 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CalculatorApp
 {
     public partial class Calculator : Form
     {
+        [Category("Behavior")]
+        public string RegexPattern { get; set; }
+        private bool DelOrBack = false;
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
+            {
+                DelOrBack = true;
+            }
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            if (!RegexPattern.IsMatch(this.Text + e.KeyChar, RegexPattern) && !DelOrBack)
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                base.OnKeyPress(e);
+            }
+            DelOrBack = false;
+        }
+
         string Operation;
         double FirstNumber;
 
         public Calculator()
         {
             InitializeComponent();
-        }
-
-        void Calculator_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != '.')
-            {
-                e.Handled = true;
-            }
         }
 
         private void Calculator_Load(object sender, EventArgs e)
@@ -32,14 +51,41 @@ namespace CalculatorApp
             MinimizeBox = false;
             BackColor = Color.Black;
             ForeColor = Color.Black;
-            Size = new Size(300, 430);
+            Size = new Size(300, 500);
             Text = "Calculator";
             FormBorderStyle = FormBorderStyle.FixedSingle;
             StartPosition = FormStartPosition.CenterScreen;
-            
 
-            KeyPreview = true;
+            //KeyPreview = true
             KeyPress += Calculator_KeyPress;
+
+            System.Windows.Forms.ToolTip toolTip = new System.Windows.Forms.ToolTip();
+
+            // Set up the delays for the ToolTip.
+            toolTip.AutoPopDelay = 5000;
+            toolTip.InitialDelay = 1000;
+            toolTip.ReshowDelay = 500;
+            
+            //System.Windows.Forms.ToolTip toolTipTitle = new System.Windows.Forms.ToolTip();
+
+            //maskedTextBox.Mask = "";
+
+            maskedTextBox.MaskInputRejected += new MaskInputRejectedEventHandler(maskedTextBox_MaskInputRejected);
+            maskedTextBox.KeyDown += new KeyEventHandler(maskedTextBox_KeyDown);
+        }
+
+        private void Calculator_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
         [DllImport("user32.dll")]
@@ -441,6 +487,26 @@ namespace CalculatorApp
                     }
                 }
             }
+        }
+
+        private void maskedTextBox_MaskInputRejected(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as System.Windows.Forms.TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void maskedTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            // The balloon tip is visible for five seconds; if the user types any data before it disappears, collapse it ourselves.
+            
         }
     }
 }
